@@ -1,31 +1,25 @@
-const key = "0af4WC36xfqE2uEheq5xBvXfLp2lwpGN";
+const key = "80a0479440bebd35c775b20a9f1e8443";
+const baseurl = "https://api.openweathermap.org/data/2.5/weather";
 
+// *Event Listener function on Keypress
+const searchInput = document.querySelector(".form-control");
+searchInput.addEventListener("keypress", (event) => {
+  if (event.keyCode == 13) {
+    console.log(searchInput.value);
+    GetWeather(searchInput.value);
+  }
+});
 
-// *Get Weather Information
-
-const getWeather = async () => {
-    
-}
-
-
-
-
-
-
-
-
-// *Get City Information
-const getCity = async (city) => {
-  const base = "http://dataservice.accuweather.com/locations/v1/cities/search";
-  const query = `?apikey=${key}&q=${city}`;
-  const response = await fetch(base + query);
-  const data = await response.json();
-  return data[0];
+// *Get Weather Report
+const GetWeather = (city) => {
+  fetch(`${baseurl}?q=${city}$appid=key`)
+    .then((weather) => {
+      return weather.json();
+    })
+    .then(showWeather);
 };
 
-getCity("manchester")
-  .then((data) => console.log(data))
-  .catch((err) => {
-    console.log(err);
-  });
- 
+// *Show Weather Report
+function showWeather(weather) {
+  console.log(weather);
+}
