@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="text-muted text-center p-2">Weather</h1>
+
+      <form class="change-location text-muted my-2">
+        <div class="text-center">
+          <label for="city">Enter a location for weather information</label>
+          <input type="text" name="city" class="form-control" />
+        </div>
+      </form>
+
+      <div class="card shadow-lg rounded">
+        <!--! Dynamic Images-->
+        <img
+          src="https://via.placeholder.com/400x265"
+          class="time card-img-top"
+          alt=""
+        />
+        <div class="icon bg-light mx-auto text-center">
+          <!-- !Icons -->
+        </div>
+
+        <div class="text-muted text-uppercase text-center details">
+          <h5 class="my-3">City name</h5>
+          <div class="my-3 text-uppercase">Weather Condition</div>
+          <div class="my-4 display-4">
+            <span>temp</span>
+            <span>&deg;C</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="Scripts/forcast.js"></script>
+    <script src="Scripts/app.js"></script>
+  </body>
+</html>
